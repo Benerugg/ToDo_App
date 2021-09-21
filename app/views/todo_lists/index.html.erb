@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 <% if current_user.present? %>
-<h1>Todo Lists</h1>
+<h1>Todo List</h1>
 <table>
   <thead>
     <tr>
-       <th>status </th>
+      <th>status </th>
       <th>Title </th>
       <th>Description </th>
       <th>Date</th>
@@ -32,7 +32,7 @@
 
 <br>
 
-<%= link_to 'New Todo List', new_todo_list_path %>
+<%= link_to 'New Todo Item', new_todo_list_path %>
 
 
 <% else %>
