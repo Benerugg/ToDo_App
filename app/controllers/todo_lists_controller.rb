@@ -72,4 +72,9 @@ class TodoListsController < ApplicationController
     def todo_list_params
       params.require(:todo_list).permit(:title, :description, :date)
     end
+    
+    CATEGORY =['Private','School','Family','Work']
+    PRIORITY = [['High',{:style => "background-color: Red"}],'Medium','Low']
 end
+
+
