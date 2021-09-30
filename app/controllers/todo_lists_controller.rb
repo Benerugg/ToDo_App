@@ -4,11 +4,17 @@ class TodoListsController < ApplicationController
   # GET /todo_lists or /todo_lists.json
   def index
     @todo_lists = TodoList.all
+    @q = TodoList.ransack(params[:q])
+    @todo_lists = @q.result(distinct: true)
   end
+  
+  
 
   # GET /todo_lists/1 or /todo_lists/1.json
-  def show
-  end
+ 
+ def new
+   @task = Task.new
+ end
 
   # GET /todo_lists/new
   def new

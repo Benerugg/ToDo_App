@@ -2,6 +2,11 @@
 
 <h1>Todo Lists</h1>
 
+<%= render 'todo_lists/search_form.html.erb' %> 
+<%= render 'todo_lists/sort.html.erb' %> 
+<%= button_to 'Back', todo_lists_path, :class => "button", :method => :get %>
+
+
 <table>
   <thead>
     <tr>
@@ -29,3 +34,4 @@
 <br>
 
 <%= link_to 'New Todo List', new_todo_list_path %>
+
