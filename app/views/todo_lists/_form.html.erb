@@ -35,6 +35,15 @@
     <%= form.label :Priority %>
     <%= form.select :priority, TodoListsController::PRIORITY, class: "form-control",placeholder:"category" %>
   </div>
+  
+    <div class="field">
+    <%= form.label :Status %>
+    <%= form.select :status, [['Active', true], ['Inactive', false]] %>
+  </div>
+  
+  <div class="field">
+    <%= form.hidden_field :user, :value => current_user.id %>
+  </div>
 
   <div class="actions">
     <%= form.submit "Add" %>

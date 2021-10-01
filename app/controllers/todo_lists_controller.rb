@@ -70,7 +70,7 @@ class TodoListsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def todo_list_params
-      params.require(:todo_list).permit(:title, :description, :date)
+      params.require(:todo_list).permit(:title, :description, :date, :category, :priority, :status, :user)
     end
     
     CATEGORY =['Private','School','Family','Work']
