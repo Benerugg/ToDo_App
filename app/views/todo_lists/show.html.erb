@@ -27,7 +27,11 @@
 
 <p>
   <strong>Status:</strong>
-  <%= @todo_list.status %>
+  <% if @todo_list.status %>
+    <td>Open</td>
+  <%else%>
+    <td>Done</td>
+  <%end%>
 </p>
 
 <%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
