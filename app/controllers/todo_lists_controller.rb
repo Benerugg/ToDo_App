@@ -74,7 +74,7 @@ class TodoListsController < ApplicationController
     end
     
     CATEGORY =['Private','School','Family','Work']
-    PRIORITY = [['High',{:style => "background-color: Red"}],'Medium','Low']
+    PRIORITY = ['High','Medium','Low']
 end
 
 
