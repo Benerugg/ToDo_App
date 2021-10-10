@@ -2,16 +2,17 @@
 
 <% if user_signed_in? %>
 
-<h1>Todo Lists</h1>
-
+<h1 style=”color:blue”> Todo Lists</h1>
+<p> </br> </p
 <%= render 'todo_lists/search_form.html.erb' %> 
 <%= render 'todo_lists/sort.html.erb' %> 
 <h3></h3>
 <%= button_to 'Clear Filter', todo_lists_path, :class => "button", :method => :get %>
 
+
 <h1></h1>
-<table width="90%", style="font-size:20px;line-height:44px;">
-  <thead>
+<table class="table table-sm table-striped ml-4", width="90%", style="font-size:20px;line-height:44px;">
+  <thead class="thead", background-color: "brown">
     <tr>
       <th>Title</th>
       <th>Description</th>
@@ -22,7 +23,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
+<p> </br> </br> </p
   <tbody>
     <% @todo_lists.each do |todo_list| %>
       <% if current_user.id.to_s == todo_list.user.to_s %>
