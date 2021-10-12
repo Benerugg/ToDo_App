@@ -6,6 +6,9 @@ class TodoListsController < ApplicationController
     @todo_lists = TodoList.all
     @q = TodoList.ransack(params[:q])
     @todo_lists = @q.result(distinct: true)
+    #@todo_lists = TodoList.find(:all, :order => "status DESC")
+    #@todo_lists = TodoList.order(created_at: :desc).limit(11)
+    #@todo_lists = TodoList.order(date: :asc)
   end
   
   

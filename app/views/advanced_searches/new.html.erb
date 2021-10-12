@@ -1,0 +1,26 @@
+<h1>Advanced Search</h1>
+
+<%= search_form_for @q do |f| %>
+  
+  <%= f.label "Search Articles ..." %>
+  <%= f.label :title_cont%>
+  <%= f.search_field :title_cont%>
+  
+  <%= f.label :description_cont %>
+  <%= f.search_field :description_cont %>
+  
+  <%= f.label :date_cont %>
+  <%= f.search_field :date_cont %>
+  
+  <%= f.label :category_cont %>
+  <%= f.search_field :category_cont %>
+  
+  <%= f.label :priority_cont %>
+  <%= f.search_field :priority_cont %>
+  
+  <%= f.submit "Search" %>
+ 
+  
+<% end %>
+
+<%= link_to 'Back', todo_lists_path %>

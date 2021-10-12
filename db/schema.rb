@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_01_004939) do
+ActiveRecord::Schema.define(version: 2021_10_12_044758) do
+
+  create_table "advanced_searches", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "todo_lists", force: :cascade do |t|
     t.string "title"

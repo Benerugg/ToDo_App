@@ -1,0 +1,17 @@
+<%= form_with(model: advanced_search) do |form| %>
+  <% if advanced_search.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(advanced_search.errors.count, "error") %> prohibited this advanced_search from being saved:</h2>
+
+      <ul>
+        <% advanced_search.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -2,24 +2,35 @@
 
 <% if user_signed_in? %>
 
-<h1 style=”color:blue”> Todo Lists</h1>
+<h1 style= 'color: blue'> Todo Lists </h1>
 <p> </br> </p
-<%= render 'todo_lists/search_form.html.erb' %> 
-<%= render 'todo_lists/sort.html.erb' %> 
+
+ 
 <h3></h3>
+
+
+<%= search_form_for @q do |f| %>
+  
+  <%= f.label "Search Articles" %>
+  <%= f.label :title_cont%>
+  <%= f.search_field :title_cont%>
+  
+<% end %>
+
 <%= button_to 'Clear Filter', todo_lists_path, :class => "button", :method => :get %>
+<%= link_to 'Advanced Search', new_advanced_search_path %>
 
 
 <h1></h1>
 <table class="table table-sm table-striped ml-4", width="90%", style="font-size:20px;line-height:44px;">
   <thead class="thead", background-color: "brown">
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Date</th>
-      <th>Category</th>
-      <th>Priority</th>
-      <th>Status</th>
+      <th><%= sort_link(@q, :title, "Title", default_order: :asc)%></th>
+      <th><%= sort_link(@q, :description, "Description", default_order: :asc) %></th>
+      <th><%= sort_link(@q, :date, "Date", default_order: :desc) %></th>
+      <th><%= sort_link(@q, :category, "Category", default_order: :asc) %></th>
+      <th><%= sort_link(@q, :priority, "Priority", default_order: :asc) %></th>
+      <th><%= sort_link(@q, :status, "Status", default_order: :asc) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
